@@ -55,4 +55,5 @@ ggplot(t_months, aes(x = month, y = total_transaction)) +
   theme_minimal() +
   theme(axis.test.x = element_text(angle = 45, hjust = 1))
 
-
+getwd()
+write.csv(t_months, file = "/Users/evelynhuang/Datathon-2025/cleaned_transaction.csv")
