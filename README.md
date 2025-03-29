@@ -1,5 +1,7 @@
 data sprouts
 
+video link: 
+
 transactions_cleaning_visualization file:
 - got rid of columns with high number of missing values
 - created a plot transaction_date vs amount for all data
