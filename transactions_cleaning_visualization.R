@@ -37,3 +37,22 @@ t_filtered_date %>%
   labs(x = "transaction_date",
        y = "transaction_amount") +
   theme_minimal()
+
+install.packages("ggtext")
+install.packages("lubridate")
+library(ggtext)
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+
+t_months <- t %>%
+  mutate(month = format(transaction_date, "%Y-%m")) %>%
+  group_by(month) %>%
+  summarize(total_transaction = sum(transaction_amt))
+ggplot(t_months, aes(x = month, y = total_transaction)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Total Transaction Amount") +
+  theme_minimal() +
+  theme(axis.test.x = element_text(angle = 45, hjust = 1))
+
+
