@@ -11,6 +11,7 @@ transactions_cleaning_visualization file:
 - made a new csv: cleaned_transaction.csv with cleaned data
 
 Prophet Model:
+- https://facebook.github.io/prophet/
 - using cleaned data, we first convereted months into Date format
 - filtered using past 8 months (from july of 2024)
 - for prophet model, it uses variables ds for independent variable and y for our dependent variable to train
