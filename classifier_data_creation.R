@@ -24,3 +24,18 @@ classifier_data <- merge(f, a, by = "current_account_nbr", all = FALSE)
 print(classifier_data)
 
 write.csv(classifier_data, "classifier_data.csv")
+
+## data visualization: Bubble chart
+library(ggplot2)
+
+classifier_data <- classifier_data %>%
+  mutate(payment_hist_1_12_mths = strsplit(payment_hist_1_12_mths, "")) %>%
+  unnest(payment_hist_1_12_mths)
+write.csv(classifier_data, "payment_seperated_classifier_data.csv")
+
+p <- read_csv("payment_seperated_classifier_data.csv")
+ggplot(p, aes(x = open_date.y, y = payment_hist_1_12_mths, size = gross_fraud_amt)) +
+  geom_point(alpha = 0.6, color = "pink") +
+  labs(title = "Fraud Amount by Payment History",
+       x = "Account Open Date", y = "Payment History", size = "Fraud Amount") +
+  theme_minimal()
