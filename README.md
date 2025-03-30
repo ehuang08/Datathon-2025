@@ -20,3 +20,15 @@ Prophet Model:
 - trained the model
 - made a future dataframe for the next 10 months to include Q4 (october to december)
 - predicted the future spendings
+
+classifier_data_creation file:
+- merged columns from multiple csv files to train k-means clustering on
+- made a new data frame: classifier_data.csv
+
+Classifier Model:
+- Used k-means cluster
+- using classifier_data.csv created a new feature called months_since_oepn
+- only using features that affect accounts eligible for credit line increase without risk, accounts eligible for credit line increase but has risk of potential defaults or fraud, no Credit Line increase required and non-Performing
+- normalized the data
+- train the data with output of 4 clusters
+- ploted data to visualize clusters
