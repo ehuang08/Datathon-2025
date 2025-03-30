@@ -1,6 +1,10 @@
-data sprouts
+Data Sprouts
 
-video link: 
+Video link: 
+
+Steps to run the code:
+- Make sure all datasets are in working directory
+- Run code in R in order of transactions_cleaning_visualization file, Prophet Model, classifier_data_creation file, Classifier Model
 
 transactions_cleaning_visualization file:
 - got rid of columns with high number of missing values
