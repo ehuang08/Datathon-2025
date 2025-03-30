@@ -1,6 +1,6 @@
 Data Sprouts
 
-Video link: 
+Video link: https://youtu.be/uZu5tsH0Z0Q
 
 Steps to run the code:
 - Make sure all datasets are in working directory
