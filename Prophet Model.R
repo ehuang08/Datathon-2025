@@ -26,5 +26,14 @@ transactions_filtered <- mutate(
 m <- prophet(transactions_filtered)
 future <- make_future_dataframe(m, periods = 304)
 forecast <- predict(m, future)
+colnames(forecast)
+if ("trend" %in% colnames(forecast)) {
+  trend_data <- forecast[, c("ds", "trend")]
+} else {
+  stop("trend col is missing")
+}
+trend_data$ds <- as.numeric(as.Date(trend_data$ds))
+lm_model <- lm(trend ~ ds, data = trend_data)
+summary(lm_model)
 plot(m, forecast)
 prophet_plot_components(m, forecast)
