@@ -23,7 +23,9 @@ Prophet Model:
 
 classifier_data_creation file:
 - merged columns from multiple csv files to train k-means clustering on
-- made a new data frame: classifier_data.csv
+- merged account numbers, account open date, payment hisotry of 1-12 Âmonths, and gross fraud amount (potential risk signs)
+- visualized account open date vs payment history 1-12 months as a bubble plot with gross fraud amount as third variable
+- made a new data frame: classifier_data.csv and payment_seperated_classifer_data.csv (payment_seperated_classifier_data.csv takes the payment history from 1-12 months and seperates accounts that contain multiple letters)
 
 Classifier Model:
 - Used k-means cluster
